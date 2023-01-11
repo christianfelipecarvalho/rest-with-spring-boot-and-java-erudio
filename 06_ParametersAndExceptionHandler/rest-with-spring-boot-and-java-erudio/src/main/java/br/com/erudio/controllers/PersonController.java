@@ -14,7 +14,7 @@ import br.com.erudio.math.SimpleMath;
 
 @RestController
 
-public class MathController {
+public class PersonController {
 	
 	private final AtomicLong counter = new AtomicLong();
 	
