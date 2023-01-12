@@ -86,8 +86,7 @@ public class PersonController {
 		
 		if(!ValidaNumero.isNumeric(numberOne))  {
 			throw new UnsupportedMathOperationException("Please set a numeric value");
-		}
-		// teste commit 
+		} 
 		return math.raiz(ValidaNumero.convertToDouble(numberOne));
 	}
 }
