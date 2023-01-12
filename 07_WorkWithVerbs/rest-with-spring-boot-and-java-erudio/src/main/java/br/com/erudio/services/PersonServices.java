@@ -21,7 +21,7 @@ public class PersonServices {
 		
 		logger.info("Finding all people!");
 		List<Person> persons = new ArrayList<>();
-		for(int i = 0; i < 8; i++) {
+		for(int i = 0; i < 10; i++) {
 			Person person = mockPerson(i);
 			persons.add(person);
 		}
