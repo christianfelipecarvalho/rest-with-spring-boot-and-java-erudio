@@ -1,38 +1,23 @@
-package br.com.erudio.model;
+package br.com.erudio.data.vo.v1;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "person")
-public class Person implements Serializable {
+public class PersonVO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "first_name",nullable = false, length = 80)
 	private String firstName;
 	
-	@Column(name = "last_name", nullable = false, length = 80)
 	private String lastName;
 	
-	@Column(nullable = false, length = 100)
 	private String address;
 	
-	@Column(nullable = false, length = 6)
 	private String gender;
 	
-	public Person() {}
+	public PersonVO() {}
 
 	public Long getId() {
 		return id;
@@ -49,7 +34,7 @@ public class Person implements Serializable {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
+	
 	public String getLastName() {
 		return lastName;
 	}
@@ -87,7 +72,7 @@ public class Person implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person other = (Person) obj;
+		PersonVO other = (PersonVO) obj;
 		return Objects.equals(address, other.address) && Objects.equals(firstName, other.firstName)
 				&& Objects.equals(gender, other.gender) && Objects.equals(id, other.id)
 				&& Objects.equals(lastName, other.lastName);

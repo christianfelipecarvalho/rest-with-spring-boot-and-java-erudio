@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.erudio.data.vo.v1.PersonVO;
 import br.com.erudio.exceptions.ResourceNotFoundException;
 import br.com.erudio.model.Person;
 import br.com.erudio.repositories.PersonRepository;
@@ -18,7 +19,7 @@ public class PersonServices {
 	
 	@Autowired
 	PersonRepository repository;
-	public List<Person> findAll() {
+	public List<PersonVO> findAll() {
 		
 		logger.info("Finding all people!");
 
@@ -26,7 +27,7 @@ public class PersonServices {
 		
 	}
 	
-	public Person findById(Long id) {
+	public PersonVO findById(Long id) {
 	
 		
 		logger.info("Finding one person!");
@@ -35,20 +36,20 @@ public class PersonServices {
 				.orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
 	}
 	
-	public Person create(Person person) {
+	public PersonVO create(PersonVO person) {
 
 		logger.info("create one person!");
 		return repository.save(person);
 	}
 	
-	public Person Update(Person person) {
+	public PersonVO Update(PersonVO person) {
 
 		logger.info("update one person!");
 		
 		var entity = repository.findById(person.getId())
 		.orElseThrow(() -> new ResourceNotFoundException("No records found for this ID!"));
 		
-		entity.setFirtName(person.getFirtName());
+		entity.setFirstName(person.getfirstName());
 		entity.setLastName(person.getLastName());
 		entity.setAddress(person.getAddress());
 		entity.setGender(person.getGender());
