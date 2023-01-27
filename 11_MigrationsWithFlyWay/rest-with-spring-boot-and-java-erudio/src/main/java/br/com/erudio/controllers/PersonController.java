@@ -21,7 +21,7 @@ import br.com.erudio.services.PersonServices;
 @RequestMapping("/api/person/v1")
 public class PersonController {
 	
-	@Autowired
+	@Autowired	
 	private PersonServices service;
 	
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
