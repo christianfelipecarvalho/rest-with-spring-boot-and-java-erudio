@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
-@JsonPropertyOrder({"id","first_name", "last_name", "address", "gender"})
+@JsonPropertyOrder({"id","first_name", "last_name", "gender"})
 public class PersonVO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -20,7 +20,8 @@ public class PersonVO implements Serializable {
 	@JsonProperty("last_name")
 	private String lastName;
 	
-	@JsonIgnore
+	//@JsonIgnore() //Se adicionar ele não recebe mais o json verificar o porque
+	//@JsonProperty(access = JsonProperty.Access.WRITE_ONLY) Pra usar com senha não aparece no Json mas aparece no banco 
 	private String address;
 	
 	private String gender;
