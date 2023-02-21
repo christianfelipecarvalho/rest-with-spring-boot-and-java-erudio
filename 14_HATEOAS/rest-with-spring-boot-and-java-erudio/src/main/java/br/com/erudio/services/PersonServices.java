@@ -47,6 +47,7 @@ public class PersonServices {
 	
 	public PersonVO create(PersonVO person) {
 
+		if(person == null)throw new RequiredObjectIsNullException();
 		
 		logger.info("Creating one person!");
 		
